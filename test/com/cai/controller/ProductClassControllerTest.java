@@ -1,5 +1,6 @@
 package com.cai.controller;
 
+import com.cai.model.Product;
 import com.cai.model.ProductClass;
 import org.junit.Test;
 
@@ -15,6 +16,15 @@ public class ProductClassControllerTest {
         List<ProductClass> classes = ProductClassController.list();
         for (ProductClass productClass:classes){
             System.out.println(productClass);
+        }
+    }
+
+    @Test
+    public void product() {
+        System.out.println("蔬菜类的商品有：");
+        List<Product> products = ProductClassController.product(1);
+        for(Product product:products){
+            System.out.println(product);
         }
     }
 }

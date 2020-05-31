@@ -11,6 +11,10 @@ import okhttp3.FormBody;
 import java.util.List;
 
 public class CartController {
+    /**
+     * 查看指定用户的购物车列表
+     * @param uid 用户编号
+     */
     public static List<Product> list(int uid){
         String url = "/cart/list";
         FormBody.Builder param = new FormBody.Builder();
@@ -29,6 +33,11 @@ public class CartController {
         return cart1;
     }
 
+    /**
+     * 删除指定购物车记录
+     * @param uid  用户编号
+     * @param pid  商品编号
+     */
     public static int delete(int uid, int pid){
         String url = "/cart/deleteCart";
         FormBody.Builder param = new FormBody.Builder();

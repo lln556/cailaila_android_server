@@ -38,13 +38,13 @@ public class CartController {
      * @param uid  用户编号
      * @param pid  商品编号
      */
-    public static int delete(int uid, int pid){
+    public static boolean delete(int uid, int pid){
         String url = "/cart/deleteCart";
         FormBody.Builder param = new FormBody.Builder();
         param.add("uid", ""+ uid);
         param.add("pid", ""+ pid);
         JSONObject body = PostUtils.postParam(url,param);
-        int res = body.getIntValue("data");
-        return res;
+        int code = body.getIntValue("code");
+        return code == 200;
     }
 }

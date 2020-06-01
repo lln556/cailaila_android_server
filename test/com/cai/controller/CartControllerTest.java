@@ -50,7 +50,7 @@ public class CartControllerTest {
 
     @Test
     public void deleteCart() {
-        int res = CartController.delete(3,3);
-        System.out.println(res);
+        boolean res = CartController.delete(3,3);
+        System.out.println("是否删除指记录："+res);
     }
 }

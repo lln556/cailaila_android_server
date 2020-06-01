@@ -37,12 +37,12 @@ public class PurchaseOrderController {
      * 删除指定订单
      * @param oid  订单编号
      */
-    public static int delete(int oid){
+    public static boolean delete(int oid){
         String url = "/purchase/order/deleteOrder";
         FormBody.Builder param = new FormBody.Builder();
         param.add("oid", ""+ oid);
         JSONObject body = PostUtils.postParam(url,param);
-        int res = body.getIntValue("data");
-        return res;
+        int code = body.getIntValue("code");
+        return code == 200;
     }
 }

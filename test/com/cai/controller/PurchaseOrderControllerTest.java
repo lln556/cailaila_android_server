@@ -40,6 +40,6 @@ public class PurchaseOrderControllerTest {
     @Test
     public void delete() {
         int oid = 6;
-        System.out.println(PurchaseOrderController.delete(oid));
+        System.out.println("是否删除指定订单："+PurchaseOrderController.delete(oid));
     }
 }

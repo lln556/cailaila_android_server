@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -25,5 +26,20 @@ public class PurchaseOrderControllerTest {
     @Test
     public void addOrder() {
         System.out.printf("您插入的订单为：" + JSON.toJSONString(PurchaseOrderController.add(purchaseOrder)));
+    }
+
+    @Test
+    public void listOrders() {
+        List<PurchaseOrder> orders = PurchaseOrderController.list(1);
+        System.out.println("uid为1的用户所有订单如下：");
+        for(PurchaseOrder purchaseOrder:orders){
+            System.out.println(purchaseOrder);
+        }
+    }
+
+    @Test
+    public void delete() {
+        int oid = 6;
+        System.out.println(PurchaseOrderController.delete(oid));
     }
 }
